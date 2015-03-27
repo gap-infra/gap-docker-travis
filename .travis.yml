@@ -26,4 +26,4 @@ before_script:
 
 script:
     - docker version
-    - docker run -t gap-system/gap-container 	
+    - docker run -t gap-system/gap-container wget https://github.com/gap-system/gap-docker-travis/cube.g && gap cube.g  	
