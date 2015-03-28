@@ -22,8 +22,9 @@ install:
 before_script:
     - "sekexe/run 'mount -t tmpfs -o size=8g tmpfs /var/lib/docker && docker -d -H tcp://0.0.0.0:2375' &"
     - "while ! docker info &> /dev/null ; do sleep 1; done"
-    - docker pull gap-system/gap-container
+    - docker pull gapsystem/gap-container
 
 script:
     - docker version
-    - docker run -t gap-system/gap-container 	
+    - docker run -t gapsystem/gap-container sh -c 'wget https://raw.githubusercontent.com/gap-system/gap-docker-travis/master/cube.g ; /home/gap/inst/gap4r7/bin/gap.sh cube.g' 
+
