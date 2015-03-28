@@ -40,4 +40,8 @@ cube := Group(
 (41,43,48,46)(42,45,47,44)(14,22,30,38)(15,23,31,39)(16,24,32,40) );
 
 # Now calculate the number of possible states of Rubik's cube:
-Size( cube );
+
+Print("The number of possible states of Rubik's cube is", Size( cube ), "\n");
+
+QUIT;
+
