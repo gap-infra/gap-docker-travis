@@ -41,7 +41,7 @@ cube := Group(
 
 # Now calculate the number of possible states of Rubik's cube:
 
-Print("The number of possible states of Rubik's cube is", Size( cube ), "\n");
+Print("\nThe number of possible states of Rubik's cube is ", Size( cube ), "\n");
 
 QUIT;
 
