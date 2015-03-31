@@ -66,4 +66,6 @@ od;
 
 Print("\n\nFinally, the order of the quotient of G by these relations:\n\n", 
       "Size( F/ rels ) = ", Size( F/ rels ), "\n\n");
+
+QUIT;
       
