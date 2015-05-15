@@ -1,18 +1,5 @@
 #!/bin/sh
 
-/bin/echo '======OUTPUT START: test packages loading (without autoloaded packages)======'
-cat `ls dev/log/testpackagesload1_*`
-/bin/echo '======OUTPUT END: test packages loading (without autoloaded packages)======'
-/bin/echo '======OUTPUT START: test packages loading (with autoloaded packages)======'
-cat `ls dev/log/testpackagesloadA_*`
-/bin/echo '======OUTPUT END: test packages loading (with autoloaded packages)======'
-/bin/echo '======OUTPUT START: test packages loading (with only needed; without autoloaded packages)======'
-cat `ls dev/log/testpackagesloadN1_*`
-/bin/echo '======OUTPUT END: test packages loading (with only needed; without autoloaded packages)======'
-/bin/echo '======OUTPUT START: test packages loading (with only needed; with autoloaded packages)======'
-cat `ls dev/log/testpackagesloadNA_*`
-/bin/echo '======OUTPUT END: test packages loading (with only needed; with autoloaded packages)======'
-#
 NUMPKGLOADSTART=`cat dev/log/testpackagesload* | grep -c "%%% Loading"`
 NUMPKGLOADDONE=`cat dev/log/testpackagesload* | grep -c "### Loaded"`
 NUMPKGLOADFAIL=`cat dev/log/testpackagesload* | grep -c "### Not loaded"`
