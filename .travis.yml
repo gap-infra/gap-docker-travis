@@ -1,18 +1,19 @@
-sudo: required
-
 language: c
 
 branches:
   only:
     - master
 
+env:
+  global:
+    - GAPCONTAINER="gapsystem/gap-docker"
+
 services:
   - docker
 
 before_install:
-  - docker pull gapsystem/gap-docker
+  - docker pull ${GAPCONTAINER}
 
 script:
   - docker version
-  - docker run -t gapsystem/gap-docker sh -c 'cd /home/gap/inst/gap-4.*/; sudo make testpackagesload; sudo wget https://raw.githubusercontent.com/gap-system/gap-docker-travis/master/postrun.sh ; sudo chmod u+x postrun.sh ; sudo ./postrun.sh' 
-
+  - docker run -v $PWD:/home/gap/travis/ ${GAPCONTAINER} /bin/sh -c 'cd ${GAP_HOME} && make testpackagesload && /home/gap/travis/postrun.sh'
