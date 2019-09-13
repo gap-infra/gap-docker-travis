@@ -2,6 +2,10 @@ sudo: required
 
 language: c
 
+branches:
+  only:
+    - master
+
 services:
   - docker
 
